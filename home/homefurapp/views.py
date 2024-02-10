@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 from rest_framework import status
 import json
 from rest_framework.permissions import IsAuthenticated
-# Create your views here.
 
 class RegisterView(APIView):
     def post(self, request):

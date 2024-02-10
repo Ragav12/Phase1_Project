@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator,MaxValueValidator
 
-# Create your models here.
 class Register(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=20)
@@ -36,9 +35,9 @@ class Invoice(models.Model):
     user= models.ForeignKey(Register, on_delete=models.CASCADE) 
     products = models.ManyToManyField(Product)
     status= models.CharField(max_length=50, choices=[
-        ('ORDERED','Ordered'),
-        ('CANCELLED', 'Cancelled'),
-        ('DELIVERED', 'Delivered'),
+        ('ORDERED','ordered'),
+        ('CANCELLED', 'cancelled'),
+        ('DELIVERED', 'delivered'),
     ])  
     total_amount= models.DecimalField(max_digits=10, decimal_places=2)
 
